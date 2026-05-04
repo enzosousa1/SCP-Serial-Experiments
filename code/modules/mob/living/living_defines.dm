@@ -60,7 +60,7 @@
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
 
 	var/resting = FALSE
-
+	var/direction_locked = FALSE
 	/// Variable to track the body position of a mob, regardgless of the actual angle of rotation (usually matching it, but not necessarily).
 	var/body_position = STANDING_UP
 	/// Number of degrees of rotation of a mob. 0 means no rotation, up-side facing NORTH. 90 means up-side rotated to face EAST, and so on.

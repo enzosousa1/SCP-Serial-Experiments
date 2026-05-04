@@ -1,12 +1,14 @@
 /mob/living/Moved(atom/old_loc, movement_dir, forced, list/old_locs, momentum_change = TRUE)
 	. = ..()
+	var/old_dir = movement_dir
 	update_turf_movespeed(loc)
 	if(HAS_TRAIT(src, TRAIT_NEGATES_GRAVITY))
 		if(!isgroundlessturf(loc))
 			ADD_TRAIT(src, TRAIT_IGNORING_GRAVITY, IGNORING_GRAVITY_NEGATION)
 		else
 			REMOVE_TRAIT(src, TRAIT_IGNORING_GRAVITY, IGNORING_GRAVITY_NEGATION)
-
+	if (. && direction_locked)
+		dir = old_dir
 	var/turf/old_turf = get_turf(old_loc)
 	var/turf/new_turf = get_turf(src)
 	// If we're moving to/from nullspace, refresh
@@ -160,4 +162,7 @@
 /mob/living/keybind_face_direction(direction)
 	if(stat > SOFT_CRIT)
 		return
+	if (direction_locked)
+		return
+
 	return ..()
