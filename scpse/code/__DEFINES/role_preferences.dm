@@ -1,0 +1,7 @@
+// SCPs
+#define ROLE_SCP173 "SCP-173"
+#define ROLE_SCP049 "SCP-049"
+#define ROLE_SCP106 "SCP-106"
+#define ROLE_SCP035 "SCP-035"
+#define ROLE_SCP999 "SCP-999"
+#define ROLE_SCP076 "SCP-076"
