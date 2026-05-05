@@ -247,6 +247,21 @@
 		return
 	user.movement_locked = FALSE
 
+/datum/keybinding/mob/toggle_facing_lock
+	hotkey_keys = list("Ctrl")
+	name = "toggle_facing_lock"
+	full_name = "Toggle Facing Lock"
+	description = "Toggle strafe mode. Keeps your facing direction while moving."
+	keybind_signal = COMSIG_KB_MOB_TOGGLEFACINGLOCK_DOWN
+
+/datum/keybinding/mob/toggle_facing_lock/down(client/user, turf/target, mousepos_x, mousepos_y)
+	. = ..()
+	if(.)
+		return
+	user.facing_locked = !user.facing_locked
+	to_chat(user, span_notice("Facing lock [user.facing_locked ? "enabled" : "disabled"]."))
+	return TRUE
+
 /datum/keybinding/living/view_pet_data
 	hotkey_keys = list("Shift")
 	name = "view_pet_commands"

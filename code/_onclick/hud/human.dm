@@ -24,6 +24,7 @@
 	using.icon_state = "act_swap"
 
 	// Hotkey buttons
+	add_screen_object(/atom/movable/screen/blink, HUD_MOB_BLINK, HUD_GROUP_HOTKEYS, ui_style)
 	add_screen_object(/atom/movable/screen/resist, HUD_MOB_RESIST, HUD_GROUP_HOTKEYS, ui_style)
 	add_screen_object(/atom/movable/screen/throw_catch, HUD_MOB_THROW, HUD_GROUP_HOTKEYS, ui_style)
 

@@ -20,8 +20,9 @@
 /obj/item/clothing/mask/scp035
 	name = "\improper SCP-035"
 	desc = "A mask created from suffering. When you look into its eyes, it looks back."
-	icon = 'scpse/icons/scps/scp035.dmi'
-	icon_state = "035"
+	icon = 'scpse/icons/scps/scp-035.dmi'
+	worn_icon = 'scpse/icons/scps/onmob_mask.dmi'
+	icon_state = "scp035_0"
 	inhand_icon_state = null
 	clothing_flags = BLOCK_GAS_SMOKE_EFFECT | MASKINTERNALS
 	flags_cover = MASKCOVERSEYES | MASKCOVERSMOUTH | PEPPERPROOF

@@ -21,16 +21,41 @@
     move_force = MOVE_FORCE_EXTREMELY_STRONG
     move_resist = MOVE_FORCE_EXTREMELY_STRONG
     pull_force = MOVE_FORCE_EXTREMELY_STRONG
-    ai_controller = /datum/ai_controller/basic_controller/statue
+    ai_controller = /datum/ai_controller/basic_controller/scp173
 
     var/snap_counter = SNAP_COUNTER_MAX
     COOLDOWN_DECLARE(exhaustion_cooldown)
 
 
+
 /mob/living/basic/scp173/Initialize(mapload)
     . = ..()
-    add_traits(list(TRAIT_MUTE, TRAIT_UNOBSERVANT, TRAIT_STRONG_GRABBER), INNATE_TRAIT)
-    AddComponent(/datum/component/unobserved_actor, unobserved_flags = NO_OBSERVED_MOVEMENT | NO_OBSERVED_ATTACKS)
+    add_traits(list(TRAIT_MUTE, TRAIT_STRONG_GRABBER), INNATE_TRAIT)
+
+/mob/living/basic/scp173/Move(atom/newloc, direct, glide_size_override)
+	if(can_be_seen())
+		return FALSE
+	return ..()
+
+/mob/living/basic/scp173/proc/is_observed_by(mob/living/observer)
+	if(QDELETED(observer) || observer == src || !observer.client)
+		return FALSE
+	if(observer.stat != CONSCIOUS)
+		return FALSE
+	if(observer.is_scp173_blinking())
+		return FALSE
+
+	var/observer_to_scp = get_dir(observer, src)
+	if(!observer_to_scp || !(observer.dir & observer_to_scp))
+		return FALSE
+
+	return can_see(observer, src, get_dist(observer, src))
+
+/mob/living/basic/scp173/proc/can_be_seen()
+	for(var/mob/living/observer in GLOB.player_list)
+		if(is_observed_by(observer))
+			return TRUE
+	return FALSE
 
 /mob/living/basic/scp173/med_hud_set_health()
     return //we're a statue we're invincible
@@ -38,21 +63,20 @@
 /mob/living/basic/scp173/med_hud_set_status()
     return //we're a statue we're invincible
 
-
-/mob/living/basic/scp173/UnarmedAttack(atom/attack_target, proximity_flag, list/modifiers)
-    if (!iscarbon(attack_target))
+/mob/living/basic/scp173/melee_attack(atom/target, list/modifiers, ignore_cooldown)
+    if (!iscarbon(target))
         return ..()
 
-    var/mob/living/carbon/target = attack_target
+    var/mob/living/carbon/carbon_target = target
 
     if (!COOLDOWN_FINISHED(src, exhaustion_cooldown))
         to_chat(src, span_warning("Your concrete joints are locked! Please wait."))
         return FALSE
 
-    target.visible_message(span_userdanger("[src] breaks [target]'s neck!"))
-    playsound(target, 'sound/effects/snap.ogg', 50, TRUE)
-    target.apply_damage(9999, BRUTE, BODY_ZONE_HEAD)
-    target.investigate_log("[src] got killed by SCP-173.", INVESTIGATE_DEATHS)
+    carbon_target.visible_message(span_userdanger("[src] breaks [carbon_target]'s neck!"))
+    playsound(carbon_target, 'sound/effects/snap.ogg', 50, TRUE)
+    carbon_target.apply_damage(9999, BRUTE, BODY_ZONE_HEAD)
+    carbon_target.investigate_log("[src] got killed by SCP-173.", INVESTIGATE_DEATHS)
     snap_counter--
 
     if (snap_counter <= 0)

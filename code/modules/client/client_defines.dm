@@ -203,6 +203,8 @@
 
 	///Are we locking our movement input?
 	var/movement_locked = FALSE
+	/// If enabled, preserve mob direction while moving (strafe behavior).
+	var/facing_locked = FALSE
 
 	/**
 	 * Assoc list with all the active maps - when a screen obj is added to

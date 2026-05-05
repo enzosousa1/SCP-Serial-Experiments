@@ -56,6 +56,7 @@
 #define HUD_MOB_STAMINA "mob_stamina"
 #define HUD_MOB_SPACESUIT "mob_spacesuit"
 #define HUD_MOB_COMBO "mob_combo"
+#define HUD_MOB_BLINK "mob_blink"
 #define HUD_MOB_RESIST "mob_resist"
 #define HUD_MOB_REST "mob_rest"
 #define HUD_MOB_SLEEP "mob_sleep"

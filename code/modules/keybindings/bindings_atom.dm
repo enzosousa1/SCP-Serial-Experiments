@@ -32,7 +32,10 @@
 		keybind_face_direction(movement_dir)
 	// Null check cause of the signal above
 	else if(user)
+		var/old_dir = dir
 		user.Move(get_step(src, movement_dir), movement_dir)
+		if(user.facing_locked && dir != old_dir)
+			setDir(old_dir)
 		return !!movement_dir //true if there was actually any player input
 
 	return FALSE

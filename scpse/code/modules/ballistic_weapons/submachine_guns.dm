@@ -1,8 +1,10 @@
 /obj/item/gun/ballistic/automatic/scp
 	name = "\improper SCP weapon"
 	desc = "An anomalous ballistic weapon."
-	fire_delay = 3
+	fire_delay = 2.5
 	fire_sound_volume = 100
+	burst_size = 1
+	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/scp/p90
 	name = "\improper FN P90"
@@ -18,6 +20,8 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	accepted_magazine_type = /obj/item/ammo_box/magazine/p90
 	can_suppress = FALSE
+	spread = 4
+	recoil = 0.5
 	fire_sound = 'scpse/sound/weapons/p90/p90_fire.ogg'
 	rack_sound = 'scpse/sound/weapons/p90/p90_cock.ogg'
 	load_sound = 'scpse/sound/weapons/p90/p90_magin.ogg'
@@ -25,7 +29,7 @@
 
 /obj/item/gun/ballistic/automatic/scp/p90/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	AddComponent(/datum/component/automatic_fire, 0.22 SECONDS)
 
 /obj/item/ammo_box/magazine/p90
 	name = "\improper FN P90 magazine"
@@ -37,7 +41,7 @@
 /obj/item/gun/ballistic/automatic/scp/mp5
 	name = "\improper MP5"
 	desc = "A compact, highly accurate submachine gun favored by tactical teams worldwide."
-	icon = 'scpse/icons/weapons/gunsgalore_guns40x32.dmi'
+	icon = 'scpse/icons/weapons/submachine_guns40x32.dmi'
 	icon_state = "mp5"
 	inhand_icon_state = "mp5"
 	lefthand_file = 'scpse/icons/weapons/worn/gunsgalore_lefthand.dmi'
@@ -48,6 +52,9 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	accepted_magazine_type = /obj/item/ammo_box/magazine/mp5
 	can_suppress = TRUE
+	fire_delay = 3
+	spread = 2
+	recoil = 0.35
 	fire_sound = 'scpse/sound/weapons/mp5/mp5_fire.ogg'
 	rack_sound = 'scpse/sound/weapons/mp5/mp5_cock.ogg'
 	load_sound = 'scpse/sound/weapons/mp5/mp5_magin.ogg'
@@ -55,7 +62,7 @@
 
 /obj/item/gun/ballistic/automatic/scp/mp5/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, fire_delay)
+	AddComponent(/datum/component/automatic_fire, 0.26 SECONDS)
 
 /obj/item/ammo_box/magazine/mp5
 	name = "\improper MP5 magazine"
@@ -63,3 +70,38 @@
 	icon_state = "mp5_mag"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
+
+/obj/item/gun/ballistic/automatic/scp/krvector
+	name = "\improper KRISS Vector"
+	desc = "A compact .45 ACP SMG with an aggressive cyclic rate and strong close-range stopping power."
+	icon = 'scpse/icons/weapons/submachine_guns40x32.dmi'
+	icon_state = "vector"
+	inhand_icon_state = "vector"
+	lefthand_file = 'scpse/icons/weapons/worn/gunsgalore_lefthand.dmi'
+	righthand_file = 'scpse/icons/weapons/worn/gunsgalore_righthand.dmi'
+	worn_icon = 'scpse/icons/weapons/worn/gunsgalore_back.dmi'
+	worn_icon_state = "vector"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+	accepted_magazine_type = /obj/item/ammo_box/magazine/vector45
+	can_suppress = TRUE
+	fire_delay = 2
+	spread = 5
+	recoil = 0.7
+	fire_sound = 'scpse/sound/weapons/vector45/vector45_fire.ogg'
+	rack_sound = 'scpse/sound/weapons/vector45/vector_back.ogg'
+
+/obj/item/gun/ballistic/automatic/scp/vecttor/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.18 SECONDS)
+
+// Typo-compatible alias for map-placed references.
+/obj/item/gun/ballistic/automatic/scp/vector
+	parent_type = /obj/item/gun/ballistic/automatic/scp/krvector
+
+/obj/item/ammo_box/magazine/vector45
+	name = "\improper KRISS Vector magazine (.45)"
+	icon = 'scpse/icons/weapons/ammo.dmi'
+	icon_state = "vector_mag"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 25

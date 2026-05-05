@@ -6939,8 +6939,12 @@
 #include "scpse\code\__DEFINES\factions.dm"
 #include "scpse\code\__DEFINES\role_preferences.dm"
 #include "scpse\code\modules\ballistic_weapons\assault_rifles.dm"
+#include "scpse\code\modules\ballistic_weapons\pistols.dm"
+#include "scpse\code\modules\ballistic_weapons\shotguns.dm"
+#include "scpse\code\modules\ballistic_weapons\revolvers.dm"
 #include "scpse\code\modules\ballistic_weapons\submachine_guns.dm"
 #include "scpse\code\modules\flavour_things\nv_grain.dm"
 #include "scpse\code\modules\scps\scp035\scp035.dm"
+#include "scpse\code\modules\scps\scp173\scp173ai.dm"
 #include "scpse\code\modules\scps\scp173\scp173.dm"
 // END_INCLUDE
