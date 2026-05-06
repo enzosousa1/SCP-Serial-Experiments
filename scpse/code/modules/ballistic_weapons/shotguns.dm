@@ -2,6 +2,8 @@
 	name = "\improper SCP shotgun"
 	desc = "A field-issued shotgun pattern used by SCP tactical personnel."
 	icon = 'scpse/icons/weapons/shotguns40x32.dmi'
+	lefthand_file = 'scpse/icons/weapons/worn/gunsgalore_lefthand.dmi'
+	righthand_file = 'scpse/icons/weapons/worn/gunsgalore_righthand.dmi'
 	fire_sound = 'scpse/sound/weapons/shotgun_shot.ogg'
 
 
