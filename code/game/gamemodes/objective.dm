@@ -608,7 +608,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 
 /datum/objective/nuclear
 	name = "nuclear"
-	explanation_text = "Destroy the station with a nuclear device."
+	explanation_text = "Destroy the site using one of their nuclear bombs."
 	martyr_compatible = TRUE
 	admin_grantable = TRUE
 

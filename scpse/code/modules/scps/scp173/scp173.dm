@@ -1,8 +1,8 @@
 #define SNAP_COUNTER_MAX 3
 #define SNAP_COOLDOWN_MAX 60 SECONDS
 
-/mob/living/basic/scp173
-    name = "SCP-173"
+/mob/living/basic/scp/scp173
+    name = "\improper SCP-173"
     desc = "A creepy concrete statue. It moves when unobserved."
     icon = 'scpse/icons/scps/scp-173.dmi'
     icon_state = "173"
@@ -28,16 +28,16 @@
 
 
 
-/mob/living/basic/scp173/Initialize(mapload)
+/mob/living/basic/scp/scp173/Initialize(mapload)
     . = ..()
     add_traits(list(TRAIT_MUTE, TRAIT_STRONG_GRABBER), INNATE_TRAIT)
 
-/mob/living/basic/scp173/Move(atom/newloc, direct, glide_size_override)
+/mob/living/basic/scp/scp173/Move(atom/newloc, direct, glide_size_override)
 	if(can_be_seen())
 		return FALSE
 	return ..()
 
-/mob/living/basic/scp173/proc/is_observed_by(mob/living/observer)
+/mob/living/basic/scp/scp173/proc/is_observed_by(mob/living/observer)
 	if(QDELETED(observer) || observer == src || !observer.client)
 		return FALSE
 	if(observer.stat != CONSCIOUS)
@@ -51,19 +51,19 @@
 
 	return can_see(observer, src, get_dist(observer, src))
 
-/mob/living/basic/scp173/proc/can_be_seen()
+/mob/living/basic/scp/scp173/proc/can_be_seen()
 	for(var/mob/living/observer in GLOB.player_list)
 		if(is_observed_by(observer))
 			return TRUE
 	return FALSE
 
-/mob/living/basic/scp173/med_hud_set_health()
+/mob/living/basic/scp/scp173/med_hud_set_health()
     return //we're a statue we're invincible
 
-/mob/living/basic/scp173/med_hud_set_status()
+/mob/living/basic/scp/scp173/med_hud_set_status()
     return //we're a statue we're invincible
 
-/mob/living/basic/scp173/melee_attack(atom/target, list/modifiers, ignore_cooldown)
+/mob/living/basic/scp/scp173/melee_attack(atom/target, list/modifiers, ignore_cooldown)
     if (!iscarbon(target))
         return ..()
 
@@ -86,5 +86,5 @@
 
     return TRUE
 
-/mob/living/basic/scp173/gib()
+/mob/living/basic/scp/scp173/gib()
     dust()

@@ -248,7 +248,7 @@
 		DYNAMIC_TIER_MEDIUMHIGH = 3,
 		DYNAMIC_TIER_HIGH = 3,
 	)
-	min_pop = 30
+	min_pop = 20
 	min_antag_cap = list("denominator" = 18, "offset" = 1)
 	ruleset_lazy_templates = list(LAZY_TEMPLATE_KEY_NUKIEBASE)
 	repeatable = FALSE

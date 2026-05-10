@@ -1,6 +1,6 @@
 /datum/antagonist/nukeop
 	name = ROLE_OPERATIVE
-	roundend_category = "syndicate operatives" //just in case
+	roundend_category = "chaos insurgency operatives" //just in case
 	antagpanel_category = ANTAG_GROUP_SYNDICATE
 	pref_flag = ROLE_OPERATIVE
 	antag_hud_name = "synd"

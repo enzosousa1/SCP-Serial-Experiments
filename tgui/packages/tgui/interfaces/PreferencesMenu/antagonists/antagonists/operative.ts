@@ -6,14 +6,13 @@ export const OPERATIVE_MECHANICAL_DESCRIPTION = `
 `;
 
 const Operative: Antagonist = {
-  key: 'operative',
-  name: 'Nuclear Operative',
+  key: 'chaosinsurgency',
+  name: 'Chaos Insurgency',
   description: [
     `
-      Congratulations, agent. You have been chosen to join the Syndicate
-      Nuclear Operative strike team. Your mission, whether or not you choose
-      to accept it, is to destroy Nanotrasen's most advanced research facility!
-      That's right, you're going to Space Station 13.
+      Congratulations, agent. Your mission
+      is to destroy Foundation's most advanced research facility!
+      That's right, you're going to [REDACTED].
     `,
 
     OPERATIVE_MECHANICAL_DESCRIPTION,

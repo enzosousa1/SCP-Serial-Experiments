@@ -69,7 +69,7 @@
 /mob/living/proc/scp173_should_blink()
 	if(!client || stat != CONSCIOUS)
 		return FALSE
-	for(var/mob/living/basic/scp173/scp in GLOB.mob_living_list)
+	for(var/mob/living/basic/scp/scp173/scp in GLOB.mob_living_list)
 		if(z != scp.z)
 			continue
 		if(get_dist(src, scp) <= SCP173_BLINK_RANGE)

@@ -12,7 +12,7 @@ const Traitor: Antagonist = {
     `
       An unpaid debt. A score to be settled. Maybe you were just in the wrong
       place at the wrong time. Whatever the reasons, you were selected to
-      infiltrate Space Station 13.
+      infiltrate Site [REDACTED].
     `,
     TRAITOR_MECHANICAL_DESCRIPTION,
   ],
