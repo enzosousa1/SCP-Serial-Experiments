@@ -2,11 +2,23 @@
 "a" = (
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/control)
+"f" = (
+/obj/machinery/button/door/scpse_facility/cardlock/level_1{
+	id_tag = "mambo"
+	},
+/turf/closed/indestructible/riveted,
+/area/centcom/central_command_areas/control)
 "g" = (
 /obj/machinery/light/floor,
 /turf/open/floor/iron,
 /area/centcom/central_command_areas/control)
 "h" = (
+/turf/closed/indestructible/riveted,
+/area/centcom/central_command_areas/control)
+"v" = (
+/obj/machinery/button/door/scpse_facility/cardlock/level_5{
+	id_tag = "mambo2"
+	},
 /turf/closed/indestructible/riveted,
 /area/centcom/central_command_areas/control)
 "x" = (
@@ -18,9 +30,22 @@
 "A" = (
 /turf/cordon,
 /area/space)
+"C" = (
+/obj/machinery/door/airlock/scpse_facility{
+	id_tag = "mambo2"
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/control)
 "G" = (
-/turf/closed/indestructible/splashscreen,
-/area/space)
+/obj/machinery/door/airlock/scpse_facility{
+	id_tag = "mambo"
+	},
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/control)
+"N" = (
+/obj/item/card/id/advanced/scpse/level_5,
+/turf/open/floor/iron,
+/area/centcom/central_command_areas/control)
 "W" = (
 /obj/effect/landmark/start/new_player,
 /turf/cordon,
@@ -41,7 +66,7 @@ A
 A
 A
 A
-G
+A
 h
 h
 h
@@ -79,7 +104,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -111,7 +136,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -143,7 +168,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -175,7 +200,7 @@ a
 a
 a
 a
-a
+f
 a
 g
 a
@@ -207,11 +232,11 @@ a
 a
 a
 a
+G
 a
 a
 a
-a
-a
+N
 a
 a
 a
@@ -239,7 +264,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -271,7 +296,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -303,7 +328,7 @@ a
 a
 g
 a
-a
+v
 a
 g
 x
@@ -335,7 +360,7 @@ a
 a
 a
 a
-a
+C
 a
 a
 a
@@ -367,7 +392,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -399,7 +424,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -431,7 +456,7 @@ a
 a
 a
 a
-a
+h
 a
 g
 a
@@ -495,7 +520,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a
@@ -527,7 +552,7 @@ a
 a
 a
 a
-a
+h
 a
 a
 a

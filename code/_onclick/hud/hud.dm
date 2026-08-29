@@ -5,7 +5,7 @@
 */
 
 GLOBAL_LIST_INIT(available_ui_styles, list(
-	"SCP" = 'scpse/icons/hud/screen_scp.dmi',
+	"SCP" = 'modular_scpse/modules/scp_hud/icons/screen_scp.dmi',
 	"Retro" = 'icons/hud/screen_retro.dmi',
 	"Plasmafire" = 'icons/hud/screen_plasmafire.dmi',
 	"Slimecore" = 'icons/hud/screen_slimecore.dmi',
